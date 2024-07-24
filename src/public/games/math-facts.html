@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/assets/normalize.css">
+  <link rel="stylesheet" href="/src/assets/main.css">
+  <link rel="stylesheet" href="/src/assets/math.css">
+  <title>Play2Learn</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/src/assets/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <h1 id="p2l-logo">
+        <i class="fa-solid fa-frog"></i>
+        <a href="../index.html" id="banner" title="Play2Learn Home Page">Play2Learn</a>
+      </h1>
+    </div>
+    <div class="row">
+      <ul class="nav nav-justified navbar-dark">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-haspopup="true">Games</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="math-facts.html" target="_blank">Math Facts
+                Practice</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="anagram-hunt.html" target="_blank">Anagram
+                Hunt</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../login.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div id="math-container">
+      <h2 id="math-title">Math Facts Practice</h2>
+      <div id="math-setup">
+        <form id="math-form">
+          <div id="selction-operation">
+            <label for="operation">Operation:</label>
+            <select id="operation" name="operation">
+              <option value="addition">Addition</option>
+              <option value="subtraction">Subtraction</option>
+              <option value="multiplication">Multiplication</option>
+              <option value="division">Division</option>
+            </select>
+          </div>
+        </form>
+
+        <div id="directions">
+          <ul>
+            <li>1. Select Operation.</li>
+            <li>2. Press <strong>Go.</strong></li>
+            <li>3. How many problems can you solve in 30 seconds?</li>
+          </ul>
+        </div>
+        <button type="submit" id="go-btn">Go</button>
+      </div>
+
+      <div id="math-facts-game">
+        <h3 id="game-mode"></h3>
+        <h3 id="math-problem"></h3>
+        <form>
+          <input type="text" id="answer" placeholder="Enter your answer here">
+        </form>
+
+        <table>
+          <tr>
+            <td>
+              <button class="int" value="1">1</button>
+            </td>
+            <td>
+              <button class="int">2</button>
+            </td>
+            <td>
+              <button class="int">3</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="int">4</button>
+            </td>
+            <td>
+              <button class="int">5</button>
+            </td>
+            <td>
+              <button class="int">6</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="int">7</button>
+            </td>
+            <td>
+              <button class="int">8</button>
+            </td>
+            <td>
+              <button class="int">9</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="int">0</button>
+            </td>
+            <td colspan="2">
+              <button id="clearBtn" class="int">CLEAR</button>
+            </td>
+          </tr>
+        </table>
+        <h3 id="score"></h3>
+        <h3 id="message"></h3>
+        <h3 id="math-timer"></h3>
+      </div>
+      <div id="final-view">
+        <h3 id="selectedGameMode"></h3>
+        <h5>Time's up!</h5>
+        <h3>Your final score is:</h3>
+        <h2 id="final-score"></h2>
+        <button type="play-again" id="again-btn">Play Again</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p id="copywrite" aria-label="website Copywritten 2024 by Play2Learn">&copy; 2024 Play2Learn</p>
+    <address>
+      <a href="../contact-us.html" target="_blank">
+        <i class="fa-regular fa-envelope" id="email-p2l" alt="Email icon"></i></a>
+      <a href="https://www.instagram.com" target="_blank">
+        <i class="fa-brands fa-instagram" id='insta' alt="Instagram icon"></i></a>
+      <a href="https://twitter.com" target="_blank">
+        <i class="fa-brands fa-x-twitter" id='x-twitter' alt="X-Twitter icon"></i></a>
+      <a href="https://www.facebook.com" target="_blank">
+        <i class="fa-brands fa-facebook" id='meta-fb' alt="Meta-Facebook icon"></i></a>
+    </address>
+  </footer>
+  <script src="/src/assets/math-script.js"></script>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

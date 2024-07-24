@@ -1,0 +1,137 @@
+main {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+label {
+    font-size: 1.5em;
+    margin-top: auto;
+}
+
+select {
+    font-size: 1.55em;
+    margin: 10px;
+}
+
+#directions> ul {
+    font-size: 1.25em;
+    margin: 10px;
+}
+
+#math-container {
+    background-color: #b9b9a4;
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    border: solid 3px var(--black);
+    border-radius: 10px;
+}
+
+h2#math-title {
+    font-size: 2.75em;
+    margin-bottom: 15px;
+}
+
+h2#final-score {
+    font-size: 3.55em;
+    position: center;
+}
+
+h3 {
+    font-size: 2.5em;
+    margin: 10px;
+}
+
+h3#game-mode {
+    font-size: 1.5em;
+    margin: 10px;
+
+}
+
+h5 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+#math-form {
+    display: flex;
+    justify-content: center;
+}
+
+#math-facts-game {
+    display: none;
+    box-sizing: border-box;
+    border-bottom: solid 3px var(--black);
+}
+
+#final-view {
+    display: none;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table button {
+    font-size: 1.5em;
+    padding: 4px;
+    margin: 4px;
+}
+
+#selection-operation {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.int {
+    font-size: 2.5em;
+    border: solid 3px var(--black);
+    border-radius: .25rem;
+    width: 100%;
+    margin: 13px;
+    padding: 40px 40px;
+}
+
+#go-btn,
+#again-btn {
+    background-color: var(--green);
+    color: var(--white);
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.5rem;
+    border-color: black;
+    border-radius: 0.5rem;
+    border-width: 0 0.2rem 0.2rem 0;
+    width: 5em;
+    padding: 1rem;
+    margin-bottom: 15px;
+}
+
+#go-btn:hover {
+    background-color: var(--green);
+    color: var(--minty);
+    cursor: pointer;
+}
+
+#go-btn:active {
+    background-color: var(--minty);
+    color: var(--loden);
+}
+
+#again-btn:hover {
+    background-color: var(--green);
+    color: var(--minty);
+    cursor: pointer;
+}
+
+#again-btn:active {
+    background-color: var(--minty);
+    color: var(--loden);
+}
+
+#answer {
+    width: auto;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/src/assets/normalize.css">
+
+
+    <title>Play2Learn</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/src/assets/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <h1 id="p2l-logo">
+                <i class="fa-solid fa-frog"></i>
+                <a href="../index.html" id="banner" title="Play2Learn Home Page">Play2Learn</a>
+            </h1>
+        </div>
+        <div class="row">
+            <ul class="nav nav-justified navbar-dark">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true">Games</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="math-facts.html" target="_blank">Math Facts
+                                Practice</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="anagram-hunt.html" target="_blank">Anagram
+                                Hunt</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Code anagram game here 
+     
+Convert all pages to use Bootstrap for layout for all components of the website, including:
+
+Main page layout
+Headers and footers
+Navigation
+Forms
+
+
+
+
+Game: Anagram Hunt (games/anagram-hunt.html)
+An anagram is a word made by rearranging the letters of another word. For example, post, pots, opts, tops, and spot are all anagrams of stop. The object of the Anagram Hunt game is to find the most anagrams for words of a specified length in a minute (or however long you decide).
+
+Start Page
+On the start page, the user should be able to specify a word length and press Play! to start the game.
+    
+
+Play Page
+When the user selects a word length and clicks Play!, the game starts:
+
+You should choose a random word of the correct length from the words in the anagrams object found in this JavaScript file, which you should include in your project.
+Examine the structure of the file. Notice that it is an array of arrays.
+You will first select a random array from the outer array. Be sure to only choose from arrays that contain words with the specified number of letters. 
+For example, if the user selects 5-letter words, you might end up with this array:
+
+[
+    "arrest",
+    "rarest",
+    "raster",
+    "raters",
+    "starer"
+]
+Then select a random word from that array. For example, you might select "beard". 
+You should display that word along with the number of anagrams it has (“beard” has 3, not including itself):
+When a user types in a correct anagram and presses Enter, their correct answer should be listed below, score should go up by 1, and the number of anagrams left should go down by 1 (after “bread” is guessed, there are now 2 possible anagrams left for “beard”).
+Note: the user should not be able to guess the word itself (e.g., beard) or a word that has already been guessed (e.g., bread).
+As soon as the user guesses all of the possible anagrams in the current array of words, another random array with words of the same length should be grabbed and a new word should be displayed.
+The Time Left countdown should start at 60 and decrease by 1 every second.
+The game ends when the timer runs out or when the user has completed all of the word arrays for words of the specified word length.
+
+Game Over Page
+The Play Again button should go back to the start page for the Anagram Hunt game.
+
+The Back to Start Screen button should go back to the start screen where the user can select the game they want to play.
+    
+    -->
+    <main>
+        <div id="ana-container">
+          <h2 id="ana-title">Anagram Hunt</h2>
+          <div id="ana-setup">
+            <form id="ana-form">
+              <div id="selction-operation">
+                <label for="operation">Word Length</label>
+                <input type="number" id="anagram-nums" placeholder="">
+              </div>
+            </form>
+    
+            <div id="directions">
+              <ul>
+                <li>1. Choose Word Length.</li>
+                <li>2. Press <strong>Play!</strong></li>
+                <li>3. How many anagrams can you find in a minute?</li>
+              </ul>
+            </div>
+            <button type="submit" id="go-btn">Play!</button>
+          </div>
+
+          <div id="ana-play">
+            <h2 id="ana-title">Anagram Hunt</h2>
+            <h3 id="ana-score">SCORE</h3>
+            <h3 id="ana-timer">TIMER</h3>
+            <hr>
+            <h3 id="ana-word"></h3>
+            <input type="text" id="ana-answers">
+            <ol id="anacorrect-guesses">
+                <li>*correct guess answers go here*</li>
+            </ol>
+          </div>
+
+          <div id="ana-finalview">
+            <h3 id="selectedGameMode"></h3>
+            <h5>Time's up!</h5>
+            <h3>You got</h3>
+            <h2 id="ana-finalscore">"# ANAGRAMS"</h2>
+            <button type="play-again" id="again-ana">Play Again</button>
+            <button type="new-game" id="new-ana">Back to Start</button>
+          </div>
+        </div>
+      </main>
+
+    <footer class="footer">
+        <p id="copywrite" aria-label="website Copywritten 2024 by Play2Learn">&copy; 2024 Play2Learn</p>
+        <address>
+            <a href="../contact-us.html" target="_blank">
+                <i class="fa-regular fa-envelope" id="email-p2l" alt="Email icon"></i></a>
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram" id='insta' alt="Instagram icon"></i></a>
+            <a href="https://twitter.com" target="_blank">
+                <i class="fa-brands fa-x-twitter" id='x-twitter' alt="X-Twitter icon"></i></a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook" id='meta-fb' alt="Meta-Facebook icon"></i></a>
+        </address>
+    </footer>
+    <script src="/src/assets/index-script.js"></script>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
